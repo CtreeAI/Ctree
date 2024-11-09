@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "115262937095",
+    "project_id": "ctree-c3569",
+    "storage_bucket": "ctree-c3569.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115262937095:android:af53cae8d15bafeba6b2a2",
+        "android_client_info": {
+          "package_name": "com.example.ctree"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCl-oroNLGFvRytUyQYm58r-frQQIfWzZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
