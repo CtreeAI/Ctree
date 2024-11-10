@@ -29,7 +29,7 @@ class ButtonSubmitForm extends StatelessWidget {
             if (color != null) {
               return color!;
             }
-            return AppColors.blue;
+            return AppColors.darkGreen;
           },
         ),
         padding: const WidgetStatePropertyAll(

@@ -63,7 +63,7 @@ class TextFieldForm extends StatelessWidget {
           ),
           borderSide: BorderSide(
             width: 1.5,
-            color: AppColors.blue,
+            color: AppColors.darkGreen,
           ),
         ),
         disabledBorder: const OutlineInputBorder(
