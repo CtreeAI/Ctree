@@ -1,3 +1,4 @@
+import 'package:ctree/core/provider/complaint_provider.dart';
 import 'package:ctree/core/provider/post_provider.dart';
 import 'package:ctree/pages/auth/CYO/presenter/page/CYO.dart';
 import 'package:ctree/pages/auth/data/auth_repository.dart';
@@ -29,6 +30,7 @@ void main() async {
           create: (_) => AuthSiginState(AuthRepository(FirebaseAuth.instance)),
         ),
         ChangeNotifierProvider(create: (_) => PostProvider()),
+        ChangeNotifierProvider(create: (_) => ComplaintProvider()),
       ],
       child: const MyApp(),
     ),
