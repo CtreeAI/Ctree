@@ -1,4 +1,5 @@
 import 'package:ctree/pages/auth/data/auth_repository.dart';
+import 'package:ctree/pages/ctPost/create_post_page.dart';
 import 'package:ctree/pages/dashboard/components/nav_item.dart';
 import 'package:ctree/pages/feed/feed_page.dart';
 import 'package:flutter/material.dart';
@@ -25,9 +26,7 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   // A lista de telas para navegação
-  final List<Widget> _pages = [
-    FeedPage(),
-  ];
+  final List<Widget> _pages = [FeedPage(), Placeholder(), CreatePostPage()];
 
   @override
   void initState() {
