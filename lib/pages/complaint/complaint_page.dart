@@ -52,9 +52,6 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('My Complaints'),
-      ),
       body: Consumer<ComplaintProvider>(
         builder: (context, provider, child) {
           if (provider.isLoading) {
