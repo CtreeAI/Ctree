@@ -15,3 +15,4 @@ flutter run
 Front-end:
 - Dart
 - Flutter
+- Firebase
