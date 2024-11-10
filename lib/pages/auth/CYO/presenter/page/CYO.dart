@@ -17,13 +17,13 @@ class CYOPage extends StatelessWidget {
             children: [
               const SizedBox(height: 50),
               const TextApp(
-                label: 'Ctree',
+                label: 'CtreeAI',
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: AppColors.black,
               ),
               const SizedBox(height: 20),
-              Image.asset('assets/images/logo.jpeg', height: 150),
+              Image.asset('assets/images/logo.png', height: 150),
               const SizedBox(height: 40),
 
               // Botões de Login Social

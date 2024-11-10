@@ -13,10 +13,7 @@ class AppColors {
   static const gray = Color(0xFF9C9EA8);
   static const red = Color(0xFFC23B22);
   static const transparent = Colors.transparent;
-  static const green = Color(0xFF34C759);
-  static const darkGreen = Color(0xFF0D8548);
-  static const yellow = Color(0xFFFFC41F);
-  static const darkYellow = Color(0xFFE39D0B);
-  static const blue = Color(0xFF143E72);
-  static const lightBlue = Color(0xFF96BBEF);
+  static const green = Color(0xFF0f4741);
+  static const darkGreen = Color(0xFF013b34);
+  static const lightGreen = Color(0xFFe7ff85);
 }

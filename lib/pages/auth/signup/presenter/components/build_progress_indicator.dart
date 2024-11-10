@@ -15,7 +15,7 @@ class BuildProgressIndicator extends StatelessWidget {
           flex: step,
           child: Container(
             height: 4,
-            color: AppColors.yellow,
+            color: AppColors.red,
           ),
         ),
         Expanded(

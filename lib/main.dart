@@ -1,3 +1,5 @@
+import 'package:ctree/core/provider/complaint_provider.dart';
+import 'package:ctree/core/provider/post_provider.dart';
 import 'package:ctree/pages/auth/CYO/presenter/page/CYO.dart';
 import 'package:ctree/pages/auth/data/auth_repository.dart';
 import 'package:ctree/pages/auth/signin/presenter/pages/signin_page.dart';
@@ -6,6 +8,8 @@ import 'package:ctree/pages/auth/signup/presenter/pages/signup_page.dart';
 import 'package:ctree/pages/auth/signup/presenter/state/auth_signup_state.dart';
 import 'package:ctree/core/styles/theme/theme.dart';
 import 'package:ctree/firebase_options.dart';
+import 'package:ctree/pages/feed/feed_page.dart';
+import 'package:ctree/pages/dashboard/dashboard_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +29,8 @@ void main() async {
         ChangeNotifierProvider(
           create: (_) => AuthSiginState(AuthRepository(FirebaseAuth.instance)),
         ),
+        ChangeNotifierProvider(create: (_) => PostProvider()),
+        ChangeNotifierProvider(create: (_) => ComplaintProvider()),
       ],
       child: const MyApp(),
     ),
@@ -43,6 +49,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const CYOPage(),
         '/signin': (context) => const SignInPage(),
         '/signup': (context) => const SignUpPage(),
+        '/home': (context) => const DashboardPage(),
       },
       debugShowCheckedModeBanner: false,
     );
