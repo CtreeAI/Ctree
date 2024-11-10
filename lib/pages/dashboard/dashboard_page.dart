@@ -46,7 +46,7 @@ class _DashboardPageState extends State<DashboardPage> {
       case 'User':
         _navItems = const [
           NavItem(icon: Icons.dashboard, label: 'Feed'),
-          NavItem(icon: Icons.settings, label: 'Denunciar'),
+          NavItem(icon: Icons.settings, label: 'Report'),
           NavItem(icon: Icons.person, label: 'Chat'),
         ];
         _pages = [
@@ -59,8 +59,8 @@ class _DashboardPageState extends State<DashboardPage> {
       case 'Org':
         _navItems = const [
           NavItem(icon: Icons.dashboard, label: 'Feed'),
-          NavItem(icon: Icons.business, label: 'Listar Denuncias'),
-          NavItem(icon: Icons.add, label: 'Criar Post'),
+          NavItem(icon: Icons.business, label: 'List Complaints'),
+          NavItem(icon: Icons.add, label: 'Create Post'),
           NavItem(icon: Icons.message_rounded, label: 'Chat'),
         ];
         _pages = [
@@ -72,7 +72,7 @@ class _DashboardPageState extends State<DashboardPage> {
         break;
 
       default:
-        // Configuração padrão ou para usuários não autenticados
+        // Default configuration or for unauthenticated users
         _navItems = const [
           NavItem(icon: Icons.dashboard, label: 'Feed'),
         ];
@@ -84,7 +84,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
   @override
   Widget build(BuildContext context) {
-    // Verifica se a navegação foi inicializada
+    // Check if navigation is initialized
     if (_navItems.isEmpty || _pages.isEmpty) {
       return const Scaffold(
         body: Center(
@@ -93,7 +93,7 @@ class _DashboardPageState extends State<DashboardPage> {
       );
     }
 
-    // Verifica se o índice selecionado é válido para a lista atual de páginas
+    // Check if the selected index is valid for the current page list
     if (_selectedIndex >= _pages.length) {
       _selectedIndex = 0;
     }

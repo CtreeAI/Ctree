@@ -13,17 +13,17 @@ class FeedPage extends StatefulWidget {
 }
 
 class _FeedPageState extends State<FeedPage> {
-  String _selectedTag = 'Todos';
+  String _selectedTag = 'All';
 
-  // Filtrar posts com base na tag selecionada
+  // Filter posts based on the selected tag
   List<PostModel> getFilteredPosts(List<PostModel> posts) {
-    if (_selectedTag == 'Todos') {
+    if (_selectedTag == 'All') {
       return posts;
     }
     return posts.where((post) => post.tag == _selectedTag).toList();
   }
 
-  // Alterar a tag selecionada e atualizar a exibição
+  // Change the selected tag and update the display
   void _onTagSelected(String tag) {
     setState(() {
       _selectedTag = tag;
@@ -33,7 +33,7 @@ class _FeedPageState extends State<FeedPage> {
   @override
   void initState() {
     super.initState();
-    // Carregar posts ao inicializar a página
+    // Load posts when initializing the page
     Future.microtask(
         () => Provider.of<PostProvider>(context, listen: false).fetchPosts());
   }
@@ -59,7 +59,7 @@ class _FeedPageState extends State<FeedPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Filtrar por Tag',
+                  'Filter by Tag',
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
@@ -72,27 +72,27 @@ class _FeedPageState extends State<FeedPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       FilterButton(
-                        label: 'Todos',
-                        isSelected: _selectedTag == 'Todos',
-                        onTap: () => _onTagSelected('Todos'),
+                        label: 'All',
+                        isSelected: _selectedTag == 'All',
+                        onTap: () => _onTagSelected('All'),
                       ),
                       const SizedBox(height: 8),
                       FilterButton(
-                        label: 'Denúncias',
-                        isSelected: _selectedTag == 'Denúncias',
-                        onTap: () => _onTagSelected('Denúncias'),
+                        label: 'Complaints',
+                        isSelected: _selectedTag == 'Complaints',
+                        onTap: () => _onTagSelected('Complaints'),
                       ),
                       const SizedBox(height: 8),
                       FilterButton(
-                        label: 'Notícias',
-                        isSelected: _selectedTag == 'Notícias',
-                        onTap: () => _onTagSelected('Notícias'),
+                        label: 'News',
+                        isSelected: _selectedTag == 'News',
+                        onTap: () => _onTagSelected('News'),
                       ),
                       const SizedBox(height: 8),
                       FilterButton(
-                        label: 'Inovação',
-                        isSelected: _selectedTag == 'Inovações',
-                        onTap: () => _onTagSelected('Inovações'),
+                        label: 'Innovation',
+                        isSelected: _selectedTag == 'Innovation',
+                        onTap: () => _onTagSelected('Innovation'),
                       ),
                     ],
                   ),

@@ -23,7 +23,8 @@ class PostList extends StatelessWidget {
                 children: [
                   TextField(
                     decoration: InputDecoration(
-                      hintText: 'Encontre o que procura!',
+                      hintText:
+                          "Find what you're looking for with the power of AI!",
                       prefixIcon: const Icon(Icons.search),
                       filled: true,
                       fillColor: Colors.grey[200],

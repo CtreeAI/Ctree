@@ -1,8 +1,8 @@
 enum ComplaintDegree {
-  low('Baixa'),
-  medium('Média'),
-  high('Alta'),
-  urgent('Urgente');
+  low('Low'),
+  medium('Medium'),
+  high('High'),
+  urgent('Urgent');
 
   const ComplaintDegree(this.label);
   final String label;

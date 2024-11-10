@@ -57,7 +57,7 @@ class _CreateComplaintPageState extends State<CreateComplaintPage> {
       if (_selectedOrg == null || _selectedDegree == null) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Por favor, selecione organização e gravidade'),
+            content: Text('Please select organization and severity'),
           ),
         );
         return;
@@ -104,7 +104,7 @@ class _CreateComplaintPageState extends State<CreateComplaintPage> {
           if (success) {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
-                content: Text('Reclamação criada com sucesso!'),
+                content: Text('Complaint created successfully!'),
               ),
             );
 
@@ -120,7 +120,7 @@ class _CreateComplaintPageState extends State<CreateComplaintPage> {
           } else {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
-                content: Text('Erro ao criar reclamação'),
+                content: Text('Error creating complaint'),
               ),
             );
           }
@@ -130,7 +130,7 @@ class _CreateComplaintPageState extends State<CreateComplaintPage> {
           Navigator.pop(context); // Close loading
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Erro ao criar reclamação: $e'),
+              content: Text('Error creating complaint: $e'),
             ),
           );
         }
@@ -163,12 +163,12 @@ class _CreateComplaintPageState extends State<CreateComplaintPage> {
                   TextFormField(
                     controller: _titleController,
                     decoration: const InputDecoration(
-                      labelText: 'Título',
+                      labelText: 'Title',
                       border: OutlineInputBorder(),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Por favor, insira um título';
+                        return 'Please enter a title';
                       }
                       return null;
                     },
@@ -180,8 +180,7 @@ class _CreateComplaintPageState extends State<CreateComplaintPage> {
                         .map((org) => DropdownMenuItem<String>(
                               value: org['id']
                                   .toString(), // Explicitly convert to String
-                              child:
-                                  Text(org['name']?.toString() ?? 'Sem nome'),
+                              child: Text(org['name']?.toString() ?? 'No name'),
                             ))
                         .toList(),
                     onChanged: (value) {
@@ -190,12 +189,12 @@ class _CreateComplaintPageState extends State<CreateComplaintPage> {
                       });
                     },
                     decoration: const InputDecoration(
-                      labelText: 'Organização',
+                      labelText: 'Organization',
                       border: OutlineInputBorder(),
                     ),
                     validator: (value) {
                       if (value == null) {
-                        return 'Por favor, selecione uma organização';
+                        return 'Please select an organization';
                       }
                       return null;
                     },
@@ -215,12 +214,12 @@ class _CreateComplaintPageState extends State<CreateComplaintPage> {
                       });
                     },
                     decoration: const InputDecoration(
-                      labelText: 'Gravidade',
+                      labelText: 'Severity',
                       border: OutlineInputBorder(),
                     ),
                     validator: (value) {
                       if (value == null) {
-                        return 'Por favor, selecione a gravidade';
+                        return 'Please select the severity';
                       }
                       return null;
                     },
@@ -229,12 +228,12 @@ class _CreateComplaintPageState extends State<CreateComplaintPage> {
                   TextFormField(
                     controller: _locationController,
                     decoration: const InputDecoration(
-                      labelText: 'Localização',
+                      labelText: 'Location',
                       border: OutlineInputBorder(),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Por favor, insira a localização';
+                        return 'Please enter the location';
                       }
                       return null;
                     },
@@ -243,13 +242,13 @@ class _CreateComplaintPageState extends State<CreateComplaintPage> {
                   TextFormField(
                     controller: _descriptionController,
                     decoration: const InputDecoration(
-                      labelText: 'Descrição',
+                      labelText: 'Description',
                       border: OutlineInputBorder(),
                     ),
                     maxLines: 4,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Por favor, insira uma descrição';
+                        return 'Please enter a description';
                       }
                       return null;
                     },
@@ -265,14 +264,14 @@ class _CreateComplaintPageState extends State<CreateComplaintPage> {
                       ),
                     ),
                     child: const Text(
-                      'Escolher imagem para a reclamação',
+                      'Choose image for complaint',
                       style: TextStyle(color: Colors.blue),
                     ),
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: _submitComplaint,
-                    child: const Text('Enviar Reclamação'),
+                    child: const Text('Submit Complaint'),
                   ),
                 ],
               ),

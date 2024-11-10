@@ -53,7 +53,7 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Minhas Reclamações'),
+        title: const Text('My Complaints'),
       ),
       body: Consumer<ComplaintProvider>(
         builder: (context, provider, child) {
@@ -72,8 +72,7 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: filteredComplaints.isEmpty
-                      ? const Center(
-                          child: Text('Nenhuma reclamação encontrada'))
+                      ? const Center(child: Text('No complaints found'))
                       : ListView.builder(
                           itemCount: filteredComplaints.length,
                           itemBuilder: (context, index) {
@@ -90,7 +89,7 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Filtrar por Grau',
+                      'Filter by Degree',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
@@ -98,19 +97,19 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                     ),
                     const SizedBox(height: 12),
                     FilterButton(
-                      label: 'Todos',
+                      label: 'All',
                       isSelected: _selectedDegree == null,
                       onTap: () => _onDegreeSelected(null),
                     ),
                     const SizedBox(height: 8),
                     FilterButton(
-                      label: 'Baixa',
+                      label: 'Low',
                       isSelected: _selectedDegree == ComplaintDegree.low.label,
                       onTap: () => _onDegreeSelected(ComplaintDegree.low.label),
                     ),
                     const SizedBox(height: 8),
                     FilterButton(
-                      label: 'Média',
+                      label: 'Medium',
                       isSelected:
                           _selectedDegree == ComplaintDegree.medium.label,
                       onTap: () =>
@@ -118,14 +117,14 @@ class _ComplaintsPageState extends State<ComplaintsPage> {
                     ),
                     const SizedBox(height: 8),
                     FilterButton(
-                      label: 'Alta',
+                      label: 'High',
                       isSelected: _selectedDegree == ComplaintDegree.high.label,
                       onTap: () =>
                           _onDegreeSelected(ComplaintDegree.high.label),
                     ),
                     const SizedBox(height: 8),
                     FilterButton(
-                      label: 'Urgente',
+                      label: 'Urgent',
                       isSelected:
                           _selectedDegree == ComplaintDegree.urgent.label,
                       onTap: () =>
@@ -158,7 +157,7 @@ class ComplaintComponent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // Imagem da queixa
+          // Complaint image
           if (complaint.imageUrl.isNotEmpty)
             ClipRRect(
               borderRadius: const BorderRadius.only(
@@ -185,7 +184,7 @@ class ComplaintComponent extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Título da queixa
+                // Complaint title
                 Text(
                   complaint.title,
                   style: const TextStyle(
@@ -195,7 +194,7 @@ class ComplaintComponent extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-                // Descrição da queixa
+                // Complaint description
                 Text(
                   complaint.description,
                   style: const TextStyle(
@@ -204,26 +203,26 @@ class ComplaintComponent extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-                // Local da queixa
+                // Complaint location
                 if (complaint.location.isNotEmpty)
                   Text(
-                    'Local: ${complaint.location}',
+                    'Location: ${complaint.location}',
                     style: const TextStyle(
                       color: Colors.white70,
                       fontSize: 14,
                     ),
                   ),
                 const SizedBox(height: 8),
-                // Grau da queixa
+                // Complaint degree
                 Text(
-                  'Grau: ${complaint.degree}',
+                  'Degree: ${complaint.degree}',
                   style: const TextStyle(
                     color: Colors.white70,
                     fontSize: 14,
                   ),
                 ),
                 const SizedBox(height: 16),
-                // Data de criação da queixa
+                // Complaint creation date
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 8,
@@ -234,7 +233,7 @@ class ComplaintComponent extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: Text(
-                    'Data: ${_formatDate(complaint.createdAt)}',
+                    'Date: ${_formatDate(complaint.createdAt)}',
                     style: const TextStyle(
                       color: Colors.white70,
                       fontSize: 12,
