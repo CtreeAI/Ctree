@@ -79,8 +79,8 @@ class _FeedPageState extends State<FeedPage> {
                       const SizedBox(height: 8),
                       FilterButton(
                         label: 'Complaints',
-                        isSelected: _selectedTag == 'Complaints',
-                        onTap: () => _onTagSelected('Complaints'),
+                        isSelected: _selectedTag == 'Reports',
+                        onTap: () => _onTagSelected('Reports'),
                       ),
                       const SizedBox(height: 8),
                       FilterButton(

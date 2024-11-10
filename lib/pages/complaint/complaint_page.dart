@@ -172,7 +172,7 @@ class ComplaintComponent extends StatelessWidget {
                   child: CircularProgressIndicator(),
                 ),
                 errorWidget: (context, url, error) => Image.asset(
-                  'assets/images/mock.png',
+                  'assets/images/teste.jpg',
                   height: 200,
                   fit: BoxFit.cover,
                 ),
