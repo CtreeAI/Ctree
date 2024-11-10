@@ -147,6 +147,7 @@ class ComplaintComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(bottom: 8),
       decoration: BoxDecoration(
         color: AppColors.darkGreen,
         borderRadius: BorderRadius.circular(12.0),
