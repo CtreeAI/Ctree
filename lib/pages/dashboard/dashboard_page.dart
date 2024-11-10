@@ -1,3 +1,4 @@
+import 'package:ctree/pages/Complaint/complaint_page.dart';
 import 'package:ctree/pages/auth/data/auth_repository.dart';
 import 'package:ctree/pages/ctComplaint/create_complaint.dart';
 import 'package:ctree/pages/ctPost/create_post_page.dart';
@@ -64,7 +65,7 @@ class _DashboardPageState extends State<DashboardPage> {
         ];
         _pages = [
           const FeedPage(),
-          const Placeholder(),
+          const ComplaintsPage(),
           const CreatePostPage(),
           const Placeholder(),
         ];
